@@ -27,8 +27,9 @@ import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
 import com.example.android.dessertpusher.databinding.ActivityMainBinding
+import timber.log.Timber
 
-class MainActivity : AppCompatActivity(), LifecycleObserver {
+//class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     private var revenue = 0
     private var dessertsSold = 0
@@ -65,7 +66,8 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("MainActivity", "onCreate Called")
+//        Log.i("MainActivity", "onCreate Called")
+        Timber.i("onCreate called")
 
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -153,7 +155,8 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     override fun onStart() {
         super.onStart()
-        Log.i("MainActivity", "onStart Called")
+//        Log.i("MainActivity", "onStart Called") // commenting as now will use timber as below
+        Timber.i("onStart called")
     }
 
     // TODO (05) Here, override the rest of the lifecycle methods and use Timber to print
